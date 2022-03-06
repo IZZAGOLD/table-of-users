@@ -1,0 +1,19 @@
+.container {
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    padding: 16px 18px 16px 16px;
+}
+
+.labels {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 10px;
+    line-height: 14px;
+    margin-bottom: 22px;
+    color: #9EAAB4;
+}
+
+
+
+

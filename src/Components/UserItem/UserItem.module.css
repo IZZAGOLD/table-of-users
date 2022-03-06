@@ -1,0 +1,36 @@
+.content {
+    color: #ACACAC;
+    font-size: 12px;
+    line-height: 16px;
+    height: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #F7F7F7;
+    margin-bottom: 20px;
+    align-items: flex-end;
+}
+
+.username {
+    color: #0CB4F1;
+    font-weight: bold;
+}
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px 0 0;
+    align-items: flex-end;
+}
+
+.cancel_icon {
+    cursor: pointer;
+}
+
+.email, .username {
+  word-break: break-all;
+}
+
+
+.content:last-child {
+    margin-bottom: 0;
+}
