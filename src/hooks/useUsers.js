@@ -5,9 +5,9 @@ export const useSortedUsers = (users, sort, minMaxCategory) => {
     const sortedPosts = useMemo(() => {
         if(sort) {
             if (minMaxCategory) {
-                return [...newUsers].sort((a, b) => b[sort] - a[sort])
+                return [...newUsers].sort((a, b) => a[sort] - b[sort])
             }
-            return [...newUsers].sort((a, b) => a[sort] - b[sort])
+            return [...newUsers].sort((a, b) => b[sort] - a[sort])
 
         }
         return users
