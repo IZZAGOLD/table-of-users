@@ -21,7 +21,7 @@ const Users = () => {
     const [filter, setFilter] = useState({sort: '', query: '', state: false})
     const [currentPage, setCurrentPage] = useState(1)
 
-    const sortedAndSearchedUsers = useUsers(users, filter.sort, filter.query,  filter.minMaxCategory)
+    const sortedAndSearchedUsers = useUsers(users, filter.sort, filter.query, filter.minMaxCategory)
     const currentTableData = useTableData(currentPage, pageSize, sortedAndSearchedUsers)
 
     useEffect(() => getUsers(), [])
@@ -39,14 +39,17 @@ const Users = () => {
             {!isUsersLoading &&
                 <>
                     <UsersList
+                        sortedAndSearchedUsers={sortedAndSearchedUsers}
+                        filter={filter}
                         users={currentTableData}
                     />
-                    <Paginator
-                        totalCount={totalCountUsers}
-                        currentPage={currentPage}
-                        pageSize={pageSize}
-                        setCurrentPage={setCurrentPage}
-                    />
+                    {!filter.query.length &&
+                        <Paginator
+                            totalCount={totalCountUsers}
+                            currentPage={currentPage}
+                            pageSize={pageSize}
+                            setCurrentPage={setCurrentPage}
+                        />}
                 </>
             }
         </div>

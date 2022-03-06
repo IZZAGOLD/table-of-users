@@ -2,7 +2,7 @@ import React from 'react'
 import UserItem from '../UserItem/UserItem'
 import cl from './UsersList.module.css'
 
-const UsersList = ({users}) => {
+const UsersList = ({users, filter, sortedAndSearchedUsers}) => {
     return (
         <div
             className={cl.container}>
@@ -13,11 +13,17 @@ const UsersList = ({users}) => {
                 <div>Дата регистрации</div>
                 <div>Рейтинг</div>
             </div>
-            {users.map((user, index) =>
-                <UserItem
-                    key={user.id}
-                    index={index + 1}
-                    user={user}/>)}
+            {filter.query.length ?
+                sortedAndSearchedUsers.map(user =>
+                    <UserItem
+                        key={user.id}
+                        user={user}/>)
+                :
+                users.map(user =>
+                    <UserItem
+                        key={user.id}
+                        user={user}/>)
+            }
         </div>
     )
 }
