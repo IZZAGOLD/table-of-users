@@ -1,2 +1,2 @@
 Тестовое задание для labmedia.su
-[Билд на Vercel](table-of-users.vercel.app)
+[Билд на Vercel](https://table-of-users.vercel.app)
